@@ -1,2 +1,2 @@
 # transparent-video
-Transparent Video POC
+Transparent video on WebGL - POC

@@ -1,0 +1,27 @@
+{
+  "private": true,
+  "name": "transparent-video",
+  "version": "0.0.1",
+  "description": "Transparent video POC",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wix-playground/transparent-video.git"
+  },
+  "keywords": [
+    "video",
+    "alpha",
+    "transparent",
+    "webgl",
+    "canvas"
+  ],
+  "author": "Wow",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/wix-playground/transparent-video/issues"
+  },
+  "homepage": "https://github.com/wix-playground/transparent-video#readme"
+}
