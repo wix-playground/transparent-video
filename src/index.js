@@ -21,7 +21,7 @@ function main () {
 
     canvas.style.width = `${width}px`;
     canvas.style.height = `${height}px`;
-    video.src = `https://video.wixstatic.com/video/${decodeURIComponent(src)}/480p/mp4/file.mp4`;
+    video.src = `https://video.wixstatic.com/video/${decodeURIComponent(src)}/mp4/file.mp4`;
 
     videogl.target(canvas);
     videogl.source(video);
