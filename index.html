@@ -16,9 +16,8 @@
         }
 
         canvas {
+            top: 0;
             left: 0;
-            width: 1920px;
-            height: 1080px;
         }
 
         video {
@@ -27,7 +26,7 @@
     </style>
 </head>
 <body>
-    <video id="video" src="https://s3-eu-west-1.amazonaws.com/ireland-video-output/alpha/v-1920x1080-60fps.mp4" loop muted preload="auto" crossorigin="anonymous"></video>
+    <video id="video" loop muted preload="auto" crossorigin="anonymous"></video>
     <canvas id="target"></canvas>
     <script src="index.js"></script>
 </body>

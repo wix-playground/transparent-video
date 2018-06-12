@@ -17,6 +17,11 @@ function main () {
     const videogl = new VideoGL();
     const canvas = document.getElementById('target');
     const video = document.getElementById('video');
+    const [, width, height, src] = /\?(\d+)\|(\d+)\|(.*)/.match(window.location.search);
+
+    canvas.style.width = `${width}px`;
+    canvas.style.height = `${height}px`;
+    video.src = `https://video.wixstatic.com/video/${decodeURIComponent(src)}/480p/mp4/file.mp4`;
 
     videogl.target(canvas);
     videogl.source(video);
