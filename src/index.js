@@ -17,7 +17,7 @@ function main () {
     const videogl = new VideoGL();
     const canvas = document.getElementById('target');
     const video = document.getElementById('video');
-    const [, width, height, src] = /\?(\d+)\|(\d+)\|(.*)/.match(window.location.search);
+    const [, width, height, src] = window.location.search.match(/\?(\d+)\|(\d+)\|(.*)/);
 
     canvas.style.width = `${width}px`;
     canvas.style.height = `${height}px`;
