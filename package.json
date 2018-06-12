@@ -5,6 +5,7 @@
   "description": "Transparent video POC",
   "main": "index.js",
   "scripts": {
+    "build": "rollup -c",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -23,5 +24,10 @@
   "bugs": {
     "url": "https://github.com/wix-playground/transparent-video/issues"
   },
-  "homepage": "https://github.com/wix-playground/transparent-video#readme"
+  "homepage": "https://github.com/wix-playground/transparent-video#readme",
+  "devDependencies": {
+    "rollup": "^0.60.2",
+    "rollup-plugin-filesize": "^2.0.0",
+    "rollup-plugin-progress": "^0.4.0"
+  }
 }

@@ -5,9 +5,7 @@
     <title>Transparent Video WebGL POC</title>
     <style>
         body {
-            height: 400vh;
             margin: 0;
-            background-image: linear-gradient(to bottom, red, blue);
         }
 
         video,
@@ -19,46 +17,18 @@
 
         canvas {
             left: 0;
-            width: 854px;
-            height: 480px;
+            width: 1920px;
+            height: 1080px;
         }
 
         video {
-            transform: scale(.3);
-            right: 0;
+            display: none;
         }
     </style>
-    <script id="vertexShader" type="x-shader/x-vertex">
-        uniform vec2 uTexOffset;
-
-        attribute vec2 aTexCoord;
-        attribute vec2 aPosition;
-
-        varying vec2 vTexColorCoord;
-        varying vec2 vTexAlphaCoord;
-
-        void main() {
-            vTexColorCoord = aTexCoord;
-            vTexAlphaCoord = vTexColorCoord + uTexOffset;
-
-            gl_Position = vec4(aPosition, 0.0, 1.0);
-        }
-    </script>
-    <script id="fragmentShader" type="x-shader/x-fragment">
-        precision highp float;
-
-        varying vec2 vTexColorCoord;
-        varying vec2 vTexAlphaCoord;
-
-        uniform sampler2D source;
-
-        void main() {
-            gl_FragColor = vec4(texture2D(source, vTexColorCoord).rgb, texture2D(source, vTexAlphaCoord).r);
-        }
-    </script>
 </head>
 <body>
-    <canvas id=target></canvas>
-    <script src="src/index.js"></script>
+    <video id="video" src="https://s3-eu-west-1.amazonaws.com/ireland-video-output/alpha/v-1920x1080-60fps.mp4" loop muted preload="auto" crossorigin="anonymous"></video>
+    <canvas id="target"></canvas>
+    <script src="index.js"></script>
 </body>
 </html>
