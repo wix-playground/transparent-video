@@ -50,8 +50,8 @@ class VideoGL {
     target (canvas) {
         this.canvas = canvas;
         this.gl = canvas.getContext('webgl', {
-            preserveDrawingBuffer: true,
-            antialias: true,
+            preserveDrawingBuffer: false, // should improve performance - https://stackoverflow.com/questions/27746091/preservedrawingbuffer-false-is-it-worth-the-effort
+            antialias: false, // should improve performance
             premultipliedAlpha: false // eliminates dithering edges in transparent video on Chrome
         });
     }
