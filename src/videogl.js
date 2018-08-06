@@ -155,6 +155,10 @@ class VideoGL {
         gl.clearColor(0, 0, 0, 0);
         gl.clear(gl.COLOR_BUFFER_BIT);
 
+        // these two fix bad dithered junk edges rendered in Safari
+        gl.enable(gl.BLEND);
+        gl.blendFunc(gl.SRC_ALPHA, gl.ZERO);
+
         // Tell it to use our program (pair of shaders)
         gl.useProgram(program);
 
