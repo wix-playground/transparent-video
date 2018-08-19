@@ -61,8 +61,8 @@ class VideoGL {
         const realToCSSPixels = 1; //window.devicePixelRatio;
 
         // Lookup the size the browser is displaying the canvas.
-        const displayWidth  = Math.floor(canvas.clientWidth  * realToCSSPixels);
-        const displayHeight = Math.floor(canvas.clientHeight  * realToCSSPixels);
+        const displayWidth  = Math.floor(canvas.clientWidth * realToCSSPixels);
+        const displayHeight = Math.floor(canvas.clientHeight * realToCSSPixels);
 
         // Check if the canvas is not the same size.
         if (canvas.width  !== displayWidth ||
@@ -93,8 +93,6 @@ class VideoGL {
         const {gl, texture, video} = this;
 
         gl.bindTexture(gl.TEXTURE_2D, texture);
-        // tell webgl we're reading premultiplied data
-        gl.pixelStorei(gl.UNPACK_PREMULTIPLY_ALPHA_WEBGL, true);
         gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGB, gl.RGB, gl.UNSIGNED_BYTE, video);
 
         // Draw the rectangle.
@@ -136,8 +134,6 @@ class VideoGL {
         const texture = gl.createTexture();
 
         gl.bindTexture(gl.TEXTURE_2D, texture);
-        // tell webgl we're reading premultiplied data
-        gl.pixelStorei(gl.UNPACK_PREMULTIPLY_ALPHA_WEBGL, true);
 
         // Set the parameters so we can render any size image.
         gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
@@ -156,8 +152,8 @@ class VideoGL {
         gl.clear(gl.COLOR_BUFFER_BIT);
 
         // these two fix bad dithered junk edges rendered in Safari
-        gl.enable(gl.BLEND);
-        gl.blendFunc(gl.SRC_ALPHA, gl.ZERO);
+        // gl.enable(gl.BLEND);
+        // gl.blendFunc(gl.SRC_ALPHA, gl.ZERO);
 
         // Tell it to use our program (pair of shaders)
         gl.useProgram(program);
